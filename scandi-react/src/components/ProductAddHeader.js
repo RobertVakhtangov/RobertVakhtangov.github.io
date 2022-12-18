@@ -3,18 +3,18 @@ import '../index.css'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
-const MainHeader = ({ newProd, setNewProd, setProds}) => {
-    const handleOnClick = (e) => {
+const MainHeader = ({ newProd, getProds}) => {
+    const handleOnClick = async (e) => {
         if(!checkKeyVal()){
             e.preventDefault();
             alert("Please, submit required data");
             return;
         }
-        axios.post("http://localhost/", newProd)
-        setProds((prev) => {
-            return [...prev, newProd]
+        await fetch("http://localhost/", {
+            method: 'POST',
+            body: JSON.stringify(newProd)
         })
-        setNewProd({"checked": false})
+        getProds()
     }
 
     const checkKeyVal = () => {
@@ -29,8 +29,6 @@ const MainHeader = ({ newProd, setNewProd, setProds}) => {
     <div className="navDiv">
       <span>Product Add</span>
       <div className="navButtons">
-        {/* <button onClick={event =>  window.location.href='/'}>Save</button> */}
-        {/* <button>Cancel</button> */}
         <Link to="/scandi_react" className='button' onClick={handleOnClick}>Save</Link>
         <Link to="/scandi_react" className='button'>Cancel</Link>
       </div>

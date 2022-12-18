@@ -33,6 +33,7 @@ switch ($method) {
         break;
     case "DELETE":
         $product_ids = json_decode(file_get_contents('php://input'));
+        var_dump($product_ids);
         $extract_ids = implode(",", $product_ids->ids);
         $sql = "DELETE FROM products WHERE id IN($extract_ids)";
         $stmt = $conn->prepare($sql);

@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 
 const Products = ({ prods, setProds }) => {
-    const [prodIdSet, setProdIdSet] = useState([]);
-    // const [prodIds, setProdIds] = useState([]);
-
     const handleOnChange = (p, e) => {
         p.checked = e.target.checked;
         setProds(prods)
     }
-
-    const handleOnClick = () => setProds((prev) => { return prev.filter(prod => !prod.checked) })
-    
 
     return (
         <div className="prodsContainer">

@@ -9,70 +9,21 @@ import axios from 'axios'
 
 function App() {
     const [products, setProducts] = useState([])
-    //     [
-    // {
-    //     id: 1,
-    //     SKU: 'JVC200123',
-    //     name: 'acme DISC',
-    //     price: 1.00,
-    //     attribute: '700 MB',
-    //     checked: false,
-    // },
-    // {
-    //     id: 2,
-    //     SKU: 'GGWP0007',
-    //     name: 'War and Peace',
-    //     price: 20.00,
-    //     attribute: '2KG',
-    //     checked: false,
-    // },
-    // {
-    //     id: 3,
-    //     SKU: 'TR120555',
-    //     name: 'Chair',
-    //     price: 40.00,
-    //     attribute: '24x45x15',
-    //     checked: false,
-    // },
-    // {
-    //     id: 4,
-    //     SKU: 'TR120555',
-    //     name: 'Chair',
-    //     price: 40.00,
-    //     attribute: '24x45x15',
-    //     checked: false,
-    // },
-    // {
-    //     id: 5,
-    //     SKU: 'TR120555',
-    //     name: 'Chair',
-    //     price: 40.00,
-    //     attribute: '24x45x15',
-    //     checked: false,
-    // },
-    // {
-    //     id: 6,
-    //     SKU: 'TR120555',
-    //     name: 'Chair',
-    //     price: 40.00,
-    //     attribute: '24x45x15',
-    //     checked: false,
-    // },
-    
-    // ])
     const [newProduct, setNewProduct] = useState({"checked": false})
     const hrf = window.location.href;
     const splitHrf = hrf.split('/').pop();
 
-    const getProducts = () => {
-        axios.get("http://localhost/").then((response) => {
-            for(let prod of response.data) prod["checked"] = false;
-            setProducts(response.data);
-        })
+    const getProducts = async () => {
+        await fetch("http://localhost/")
+            .then((response) => response.json())
+            .then((data) => {
+                for(let prod of data) prod["checked"] = false;
+                setProducts(data);
+            })
     }
 
-    let mHeader = <MainHeader getProds={getProducts} prods={products} setProds={setProducts}/>
-    let paHeader = <ProductAddHeader newProd={newProduct} setNewProd={setNewProduct} setProds={setProducts}/>
+    let mHeader = <MainHeader  prods={products} getProds={getProducts}/>
+    let paHeader = <ProductAddHeader newProd={newProduct} getProds={getProducts}/>
     let headerToRender = mHeader;
     headerToRender = splitHrf === 'scandi_react' || splitHrf === '' ? mHeader : paHeader;
 
@@ -84,7 +35,6 @@ function App() {
             }
             return prev;
         })
-        console.log(products);
     }, [useLocation()])
 
     useEffect(() => {
