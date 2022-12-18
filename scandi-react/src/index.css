@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.prodsContainer{
+    padding: 0 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    min-height: 350px;
+}
+.prodContainer *{
+    margin: 0;
+}
+.prodContainer{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.prodContainer:hover{
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+    transition: 0.3s;
+    background-size: cover;
+}
+
+
+.delete-checkbox{
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    left: 10px;
+}
+
+.navDiv{
+    position: relative;
+    height: 70px;
+    margin: 20px auto;
+    padding-bottom: 20px;
+    border-bottom: solid;
+
+}
+
+.navDiv span{
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.navButtons{
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 45%;
+    right: 10px;
+}
+
+.navButtons button, .button{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: white;
+    border-color: black;
+    color: black;
+    border: solid;
+    border-width: 2px;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.navButtons button:hover, .button:hover{
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 7px 0px rgba(0,0,0,0.75);
+    color: white;
+    background-color: black;
+    border-color: black;
+    transition: 0.3s;
+}
+
+.footer{
+    margin: 20px auto;
+    border-top: solid;
+    text-align: center;
+}
+
+.productAddPage{
+    width: 960px;
+    /* padding: 0 50px; */
+}
+
+#product_form{
+    margin: 0 auto;
+}
+
+.productAddPage div{
+    margin-top: 30px;
+}
+.productPageTextInputs{
+    width: 40%;
+    margin: 0 auto;
+}
+
+#product_form label{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#product_form input{
+    float: right;
+    height: 25px;
+    width: 200px;
+}
+
+#product_form select{
+    float: right;
+    height: 30px;
+    width: 100px;
+}
