@@ -73,10 +73,11 @@ function App() {
 
     let mHeader = <MainHeader getProds={getProducts} prods={products} setProds={setProducts}/>
     let paHeader = <ProductAddHeader newProd={newProduct} setNewProd={setNewProduct} setProds={setProducts}/>
-    let headerToRender = splitHrf === 'scandi_react' ? mHeader : paHeader
+    let headerToRender = mHeader;
+    headerToRender = splitHrf === 'scandi_react' || splitHrf === '' ? mHeader : paHeader;
 
     useEffect(() => {
-        headerToRender = splitHrf === 'scandi_react' ? mHeader : paHeader
+        headerToRender = splitHrf === 'scandi_react' || splitHrf === '' ? mHeader : paHeader
         setProducts((prev) => {
             for(let prod of prev){
                 prod.checked = false;
