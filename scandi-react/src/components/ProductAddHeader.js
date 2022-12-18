@@ -29,8 +29,8 @@ const MainHeader = ({ newProd, getProds}) => {
     <div className="navDiv">
       <span>Product Add</span>
       <div className="navButtons">
-        <Link to="/scandi_react" className='button' onClick={handleOnClick}>Save</Link>
-        <Link to="/scandi_react" className='button'>Cancel</Link>
+        <Link to="/" className='button' onClick={handleOnClick}>Save</Link>
+        <Link to="/" className='button'>Cancel</Link>
       </div>
     </div>
   )

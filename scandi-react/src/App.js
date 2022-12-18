@@ -11,7 +11,7 @@ function App() {
     const [products, setProducts] = useState([])
     const [newProduct, setNewProduct] = useState({"checked": false})
     const hrf = window.location.href;
-    const splitHrf = hrf.split('/').pop();
+    const splitHrf = hrf.split('/');
 
     const getProducts = async () => {
         await fetch("http://localhost/")
@@ -25,10 +25,10 @@ function App() {
     let mHeader = <MainHeader  prods={products} getProds={getProducts}/>
     let paHeader = <ProductAddHeader newProd={newProduct} getProds={getProducts}/>
     let headerToRender = mHeader;
-    headerToRender = splitHrf === 'scandi_react' || splitHrf === '' ? mHeader : paHeader;
+    headerToRender = !splitHrf.includes('add-product') ? mHeader : paHeader;
 
     useEffect(() => {
-        headerToRender = splitHrf === 'scandi_react' || splitHrf === '' ? mHeader : paHeader
+        headerToRender = !splitHrf.includes('add-product') ? mHeader : paHeader
         setProducts((prev) => {
             for(let prod of prev){
                 prod.checked = false;
@@ -45,7 +45,7 @@ function App() {
         <div className="App">
             {headerToRender}
             <Routes>
-                <Route path="/scandi_react" element={<Products prods={products} setProds={setProducts}/>} />
+                <Route path="/" element={<Products prods={products} setProds={setProducts}/>} />
                 <Route path="add-product" element={<ProductAddPage setNewProd={setNewProduct}/>} />
             </Routes>
         <Footer />
