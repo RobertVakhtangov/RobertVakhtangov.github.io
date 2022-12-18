@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/robertvakhtangov/scandi_react.git/static/css/main.7a856028.css",
-    "main.js": "/robertvakhtangov/scandi_react.git/static/js/main.3ded0a38.js",
-    "static/js/787.f3ae60db.chunk.js": "/robertvakhtangov/scandi_react.git/static/js/787.f3ae60db.chunk.js",
-    "index.html": "/robertvakhtangov/scandi_react.git/index.html",
-    "main.7a856028.css.map": "/robertvakhtangov/scandi_react.git/static/css/main.7a856028.css.map",
-    "main.3ded0a38.js.map": "/robertvakhtangov/scandi_react.git/static/js/main.3ded0a38.js.map",
-    "787.f3ae60db.chunk.js.map": "/robertvakhtangov/scandi_react.git/static/js/787.f3ae60db.chunk.js.map"
+    "main.css": "/robertvakhtangov.github.io/scandi_react/static/css/main.7a856028.css",
+    "main.js": "/robertvakhtangov.github.io/scandi_react/static/js/main.c6c41125.js",
+    "static/js/787.f3ae60db.chunk.js": "/robertvakhtangov.github.io/scandi_react/static/js/787.f3ae60db.chunk.js",
+    "index.html": "/robertvakhtangov.github.io/scandi_react/index.html",
+    "main.7a856028.css.map": "/robertvakhtangov.github.io/scandi_react/static/css/main.7a856028.css.map",
+    "main.c6c41125.js.map": "/robertvakhtangov.github.io/scandi_react/static/js/main.c6c41125.js.map",
+    "787.f3ae60db.chunk.js.map": "/robertvakhtangov.github.io/scandi_react/static/js/787.f3ae60db.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7a856028.css",
-    "static/js/main.3ded0a38.js"
+    "static/js/main.c6c41125.js"
   ]
 }
