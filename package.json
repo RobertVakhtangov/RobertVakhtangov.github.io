@@ -1,12 +1,5 @@
 {
-    "name": "scanfi_react",
-    "homepage": "https://github.com/robertvakhtangov/scandi_react.git",
-    
-    "devDependencies": {
-        "gh-pages": "^4.0.0"
-    },
-    "scripts": {
-        "predeploy" : "npm run build",
-        "deploy" : "gh-pages -d build"
-    }
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
