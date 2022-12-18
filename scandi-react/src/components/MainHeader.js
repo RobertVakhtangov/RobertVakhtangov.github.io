@@ -24,8 +24,8 @@ const MainHeader = ({getProds, prods, setProds}) => {
         <div className="navDiv">
             <span>Product {headerName}</span>
             <div className="navButtons">
-                <Link to='/add-product' style={{}} className="button">Add</Link>
-                <button onClick={massDelete}>Mass Delete</button>
+                <Link to='/add-product' className="button">ADD</Link>
+                <button onClick={massDelete}>MASS DELETE</button>
             </div>
         </div>
     )

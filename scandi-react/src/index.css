@@ -78,9 +78,9 @@ code {
 }
 
 .navButtons{
-    width: 22%;
+    width: 25%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     position: absolute;
     top: 45%;
     right: 10px;

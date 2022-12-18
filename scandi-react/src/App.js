@@ -73,10 +73,10 @@ function App() {
 
     let mHeader = <MainHeader getProds={getProducts} prods={products} setProds={setProducts}/>
     let paHeader = <ProductAddHeader newProd={newProduct} setNewProd={setNewProduct} setProds={setProducts}/>
-    let headerToRender = splitHrf === '' ? mHeader : paHeader
+    let headerToRender = splitHrf === 'scandi_react' ? mHeader : paHeader
 
     useEffect(() => {
-        headerToRender = splitHrf === '' ? mHeader : paHeader
+        headerToRender = splitHrf === 'scandi_react' ? mHeader : paHeader
         setProducts((prev) => {
             for(let prod of prev){
                 prod.checked = false;
@@ -93,8 +93,8 @@ function App() {
     return (
         <div className="App">
             {headerToRender}
-            <Routes>            
-                <Route path="/" element={<Products prods={products} setProds={setProducts}/>} />
+            <Routes>
+                <Route path="/scandi_react" element={<Products prods={products} setProds={setProducts}/>} />
                 <Route path="add-product" element={<ProductAddPage setNewProd={setNewProduct}/>} />
             </Routes>
         <Footer />

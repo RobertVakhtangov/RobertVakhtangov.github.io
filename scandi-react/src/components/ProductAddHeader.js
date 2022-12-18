@@ -31,8 +31,8 @@ const MainHeader = ({ newProd, setNewProd, setProds}) => {
       <div className="navButtons">
         {/* <button onClick={event =>  window.location.href='/'}>Save</button> */}
         {/* <button>Cancel</button> */}
-        <Link to="/" className='button' onClick={handleOnClick}>Save</Link>
-        <Link to="/" className='button'>Cancel</Link>
+        <Link to="/scandi_react" className='button' onClick={handleOnClick}>Save</Link>
+        <Link to="/scandi_react" className='button'>Cancel</Link>
       </div>
     </div>
   )
