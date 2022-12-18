@@ -10,7 +10,7 @@ const Products = ({ prods, setProds }) => {
         <div className="prodsContainer">
             {prods.map((p) => (
                 <div className="prodContainer" key={p.id}>
-                    <input type="checkbox" onChange={(e) => handleOnChange(p, e)} className=".delete-checkbox"/>
+                    <input type="checkbox" onChange={(e) => handleOnChange(p, e)} className="delete-checkbox"/>
                     <h3>{p.SKU}</h3>
                     <h4>{p.name}</h4>            
                     <h4>Price: {p.price}$</h4>            

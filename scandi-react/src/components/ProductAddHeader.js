@@ -1,7 +1,6 @@
 import React from 'react'
 import '../index.css'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
 
 const MainHeader = ({ newProd, getProds}) => {
     const handleOnClick = async (e) => {
@@ -10,7 +9,7 @@ const MainHeader = ({ newProd, getProds}) => {
             alert("Please, submit required data");
             return;
         }
-        await fetch("http://localhost/", {
+        await fetch("https://scandi-react.000webhostapp.com/", {
             method: 'POST',
             body: JSON.stringify(newProd)
         })

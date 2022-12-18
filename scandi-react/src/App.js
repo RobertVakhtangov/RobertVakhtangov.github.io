@@ -5,7 +5,6 @@ import ProductAddHeader from './components/ProductAddHeader'
 import ProductAddPage from './pages/ProductAddPage'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Footer from './components/Footer'
-import axios from 'axios'
 
 function App() {
     const [products, setProducts] = useState([])
@@ -14,7 +13,7 @@ function App() {
     const splitHrf = hrf.split('/');
 
     const getProducts = async () => {
-        await fetch("http://localhost/")
+        await fetch("https://scandi-react.000webhostapp.com/")
             .then((response) => response.json())
             .then((data) => {
                 for(let prod of data) prod["checked"] = false;

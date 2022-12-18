@@ -38,7 +38,7 @@ const ProductAddPage = ({ setNewProd }) => {
                 <input type="number" name="price" placeholder="please type the product price" id="price" onChange={(e) => handleOnChange(e.target.value, e.target.name)}></input>
             </div>
             <div>
-                <label id="#productType" for="product_type">Type Switcher</label>
+                <label id="productType" for="product_type">Type Switcher</label>
                 <select onChange={({ target }) => setProductType(target.value)}>
                     <option value="DVD" id="DVD">DVD</option>
                     <option value="Furniture" id="Furniture">Furniture</option>
