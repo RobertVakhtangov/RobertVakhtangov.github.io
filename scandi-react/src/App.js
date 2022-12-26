@@ -12,8 +12,8 @@ function App() {
     const hrf = window.location.href;
     const splitHrf = hrf.split('/');
 
-    const getProducts = async () => {
-        await fetch("https://scandi-react.000webhostapp.com/")
+    const getProducts = () => {
+        fetch("https://rob-scandi-php.herokuapp.com/")
             .then((response) => response.json())
             .then((data) => {
                 for(let prod of data) prod["checked"] = false;

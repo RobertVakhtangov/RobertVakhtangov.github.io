@@ -1,10 +1,11 @@
 <?php
 class DbConnect
 {
-    private $server = 'localhost';
-    private $dbname = 'scandiweb';
-    private $user = 'rob';
-    private $pass = '12345';
+    //mysql://bebca0089e24fb:3f5e593c@eu-cdbr-west-03.cleardb.net/heroku_657348e4a7a9156?reconnect=true
+    private $server = 'eu-cdbr-west-03.cleardb.net';
+    private $dbname = 'heroku_657348e4a7a9156';
+    private $user = 'bebca0089e24fb';
+    private $pass = '3f5e593c';
 
     public function connect()
     {

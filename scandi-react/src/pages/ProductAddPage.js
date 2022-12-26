@@ -7,8 +7,6 @@ import AddFurniture from '../components/ProductAddVariants/AddFurniture.js'
 
 const ProductAddPage = ({ setNewProd }) => {
     const [productType, setProductType] = useState("dvd");
-    let addRenderer = <AddDVD />
-
     const handleOnChange = (value, key = "attribute") => {
         setNewProd((prev) => {
             prev[key] = value;
@@ -16,9 +14,10 @@ const ProductAddPage = ({ setNewProd }) => {
         })
     }
 
-    if(productType === "dvd") addRenderer = <AddDVD hoc={handleOnChange}/>;
-    if(productType === "book") addRenderer = <AddBook hoc={handleOnChange}/>;
-    if(productType === "furniture") addRenderer = <AddFurniture hoc={handleOnChange}/>;
+    let addRenderer = <AddDVD hoc={handleOnChange}/>
+    if(productType === "DVD") addRenderer = <AddDVD hoc={handleOnChange}/>;
+    if(productType === "Book") addRenderer = <AddBook hoc={handleOnChange}/>;
+    if(productType === "Furniture") addRenderer = <AddFurniture hoc={handleOnChange}/>;
     
     
   return (
@@ -38,8 +37,8 @@ const ProductAddPage = ({ setNewProd }) => {
                 <input type="number" name="price" placeholder="please type the product price" id="price" onChange={(e) => handleOnChange(e.target.value, e.target.name)}></input>
             </div>
             <div>
-                <label id="productType" for="product_type">Type Switcher</label>
-                <select onChange={({ target }) => setProductType(target.value)}>
+                <label for="product_type">Type Switcher</label>
+                <select id="productType" onChange={({ target }) => setProductType(target.value)}>
                     <option value="DVD" id="DVD">DVD</option>
                     <option value="Furniture" id="Furniture">Furniture</option>
                     <option value="Book" id="Book">Book</option>

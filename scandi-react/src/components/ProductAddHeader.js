@@ -9,7 +9,7 @@ const MainHeader = ({ newProd, getProds}) => {
             alert("Please, submit required data");
             return;
         }
-        await fetch("https://scandi-react.000webhostapp.com/", {
+        await fetch("https://rob-scandi-php.herokuapp.com/", {
             method: 'POST',
             body: JSON.stringify(newProd)
         })
