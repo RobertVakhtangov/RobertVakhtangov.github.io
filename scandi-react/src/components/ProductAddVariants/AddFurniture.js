@@ -21,7 +21,7 @@ const AddFurniture = ({ hoc }) => {
             return prev;
         })
 
-        hoc(`${dimensions[0]}x${dimensions[1]}x${dimensions[2]}`)
+        hoc({"h": dimensions[0], "w": dimensions[1], "l": dimensions[2]})
     }
 
     return (
@@ -39,7 +39,7 @@ const AddFurniture = ({ hoc }) => {
                 <label for="furniture_l">Length (CM)</label>
                 <input id="length" type="number" name="furniture_l" onChange={(e) => handleOnChange(e.target.name, e.target.value)}></input>
             </div>
-            <h4>Description Description Description</h4>
+            <h4>Please provide dimensions in HxWxL format</h4>
         </div>
     )
 }

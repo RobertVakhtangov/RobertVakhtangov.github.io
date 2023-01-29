@@ -13,7 +13,8 @@ function App() {
     const splitHrf = hrf.split('/');
 
     const getProducts = () => {
-        fetch("https://rob-scandi-php.herokuapp.com/")
+        // fetch("https://rob-scandi-php.herokuapp.com/")
+        fetch("http://localhost/")
             .then((response) => response.json())
             .then((data) => {
                 for(let prod of data) prod["checked"] = false;
@@ -34,6 +35,7 @@ function App() {
             }
             return prev;
         })
+        setNewProduct({"checked": false});
     }, [useLocation()])
 
     useEffect(() => {

@@ -6,12 +6,12 @@ const MainHeader = ({prods, getProds}) => {
     const massDelete = () => {
         let checkedProds = [];
         for(let prod of prods) if(prod.checked) {
-            console.log(checkedProds);
             checkedProds.push(prod.id);
         }
         let payload = {ids: checkedProds}
         if(!checkedProds.length) return;
-        fetch("https://rob-scandi-php.herokuapp.com/", {
+        // fetch("https://rob-scandi-php.herokuapp.com/", {
+        fetch("http://localhost/", {
             method: 'DELETE',
             headers: {
                 'Accept' : 'application/json, text/plain, */*',
@@ -19,14 +19,14 @@ const MainHeader = ({prods, getProds}) => {
             },
             body: JSON.stringify(payload)
         })
-        .then((response) => response.json)
+        .then((response) => response.data)
         .then(() => getProds())
         .catch((err) => console.log(err))
     }
 
     return (
         <div className="navDiv">
-            <span>Product List TESTTEST</span>
+            <span>Product List</span>
             <div className="navButtons">
                 <Link to='/add-product' className="button">ADD</Link>
                 <button onClick={massDelete}>MASS DELETE</button>
